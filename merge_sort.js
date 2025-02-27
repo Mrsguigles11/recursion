@@ -23,13 +23,10 @@ function mergeSort(array) {
     return array;
   }
 
-  const a = 1;
-  const b = array.length;
-
-  if (a < b) {
-    const middle = b / 2;
-    const leftSide = mergeSort(array.slice(0, middle));
-    const rightSide = mergeSort(array.slice(middle, array.length));
-    return merge(leftSide, rightSide);
-  }
+  const middle = array.length / 2;
+  const leftSide = mergeSort(array.slice(0, middle));
+  const rightSide = mergeSort(array.slice(middle, array.length));
+  return merge(leftSide, rightSide);
 }
+
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
